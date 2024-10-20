@@ -2,11 +2,10 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const BlogCard = ({blog}) => {
-    console.log(blog);
-    const {title,social_image,description,readable_publish_date}=blog;
+    const {id,title,social_image,description,readable_publish_date}=blog;
     return (
         <Link
-            to='/'
+            to={`/blogs/${id}`}
             className="w-full mx-auto group transition hover:scale-105 hover:no-underline focus:no-underline dark:bg-gray-50
              border-4 p-4 border-cyan-500 hover:border-secondary"
           >

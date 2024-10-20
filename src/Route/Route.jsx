@@ -4,6 +4,9 @@ import MainLayouts from "../layouts/MainLayouts";
 import Home from "../pages/Home/Home";
 import Blogs from "../pages/Blogs/Blogs";
 import BookMarks from "../pages/BookMarks/BookMarks";
+import Blog from "../components/Blog/Blog";
+import Content from "../components/Content/Content";
+import Author from "../components/Author/Author";
 
 
 const Route = createBrowserRouter([
@@ -24,7 +27,25 @@ const Route = createBrowserRouter([
             {
                 path:'/bookmarks',
                 element:<BookMarks></BookMarks>
+            },
+            {
+                path:'/blogs/:id',
+                element:<Blog></Blog>,
+                loader:({params})=>fetch(`https://dev.to/api/articles/${params.id}`),
+                children:[
+                    {
+                    index:true,
+                    element:<Content></Content>,
+                    loader:({params})=>fetch(`https://dev.to/api/articles/${params.id}`)
+                   },
+                   {
+                    path:'author',
+                    element:<Author></Author>
+                   }
+
+            ]
             }
+
         ]
     }
 ])
