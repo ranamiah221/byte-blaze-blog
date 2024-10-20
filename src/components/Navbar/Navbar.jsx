@@ -1,41 +1,67 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const Navbar = () => {
-    const [theme, setTheme]= useState('light');
-    useEffect(()=>{
-        localStorage.setItem('theme',theme);
-        const localTheme= localStorage.getItem('theme');
-        document.querySelector('html').setAttribute('data-theme',localTheme)
-        console.log( document.querySelector('html'))
-    },[theme])
-    const handleToggle =e=>
-     if(e?.target?.checked){
-        setTheme('synthwave')
-     }
-     else{
-        setTheme('light')
-     }
+  const [theme, setTheme] = useState("light");
+  useEffect(() => {
+    localStorage.setItem("theme", theme);
+    const localTheme = localStorage.getItem("theme");
+    document.querySelector("html").setAttribute("data-theme", localTheme);
+    console.log(document.querySelector("html"));
+  }, [theme]);
+  const handleToggle = (e) => {
+    if (e.target.checked) {
+      setTheme("synthwave");
+    } else {
+      setTheme("light");
     }
-    
+  };
+  const links = (
+    <>
+      <li>
+        <NavLink
+          to="/"
+          className={({ isActive, isPending }) =>
+            isPending ? "pending" : isActive ? "text-primary" : ""
+          }
+        >
+          Home
+        </NavLink>
+      </li>
+
+      <li>
+        <NavLink
+          to="/blogs"
+          className={({ isActive, isPending }) =>
+            isPending ? "pending" : isActive ? "text-primary" : ""
+          }
+        >
+          Blogs
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          to="/bookmarks"
+          className={({ isActive, isPending }) =>
+            isPending ? "pending" : isActive ? "text-primary" : ""
+          }
+        >
+          Bookmarks
+        </NavLink>
+      </li>
+    </>
+  );
+
   return (
-    <div className="navbar bg-base-100 shadow-lg px-5">
+    <div className="navbar bg-base-100 shadow-lg px-5 fixed z-10 shadow-sky-500">
       <div className="flex-1">
-        <Link className="btn btn-ghost text-2xl font-semibold text-secondary gap-0">
+        <Link className="btn btn-ghost text-4xl font-bold text-secondary gap-0">
           Byte<span className="text-primary">Blaze</span>{" "}
         </Link>
       </div>
       <div className="flex-none">
-        <ul className="menu menu-horizontal px-1 text-base font-medium">
-          <li>
-            <a>Home</a>
-          </li>
-          <li>
-            <a>Blogs</a>
-          </li>
-          <li>
-            <a>Bookmarks</a>
-          </li>
+        <ul className="menu menu-horizontal px-1 text-xl font-medium gap-3">
+          {links}
         </ul>
 
         {/* theme controller */}
