@@ -4,8 +4,8 @@ import Markdown from 'react-markdown';
 
 const Content = () => {
     const blog=useLoaderData();
-    const {tags,title,social_image,description,readable_publish_date, body_html}=blog;
-    console.log(blog )
+    const {tags,title,social_image,readable_publish_date, body_html}=blog;
+   
   return (
     <div
       
@@ -30,12 +30,12 @@ const Content = () => {
             
         </div>
 
-      <div className="space-y-6 my-6">
+      <div className="space-y-4 my-6">
         <h3 className="text-4xl font-semibold group-hover:underline group-focus:underline">
           {title}...
         </h3>
         <p className="text-xl dark:text-gray-600">{readable_publish_date}</p>
-        <Markdown rehypePlugins={[rehypeRaw]}>{body_html}</Markdown>
+        <Markdown  rehypePlugins={[rehypeRaw]}>{body_html}</Markdown>
       </div>
     </div>
   );

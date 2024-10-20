@@ -40,7 +40,8 @@ const Route = createBrowserRouter([
                    },
                    {
                     path:'author',
-                    element:<Author></Author>
+                    element:<Author></Author>,
+                    loader:({params})=>fetch(`https://dev.to/api/articles/${params.id}`)
                    }
 
             ]
