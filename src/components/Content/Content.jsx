@@ -9,7 +9,7 @@ const Content = () => {
   return (
     <div
       
-      className="w-full mx-auto group  hover:no-underline focus:no-underline dark:bg-gray-50
+      className="max-w-4xl mx-auto group  hover:no-underline focus:no-underline dark:bg-gray-50
              border-2 p-4 border-gray-300 "
     >
       <img

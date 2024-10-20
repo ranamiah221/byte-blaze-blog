@@ -15,7 +15,7 @@ const Author = () => {
    } = user;
   console.log(blog);
   return (
-    <div className="flex flex-col justify-center max-w-full p-6 shadow-md rounded-xl sm:px-12 dark:bg-gray-50 dark:text-gray-800">
+    <div className="flex flex-col justify-center max-w-4xl p-6 shadow-md rounded-xl sm:px-12 dark:bg-gray-50 dark:text-gray-800">
       <img
         src={profile_image_90}
         alt=""

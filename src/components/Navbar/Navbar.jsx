@@ -15,52 +15,48 @@ const Navbar = () => {
       setTheme("light");
     }
   };
-  const links = (
-    <>
-      <li>
-        <NavLink
-          to="/"
-          className={({ isActive, isPending }) =>
-            isPending ? "pending" : isActive ? "text-primary" : ""
-          }
-        >
-          Home
-        </NavLink>
-      </li>
-
-      <li>
-        <NavLink
-          to="/blogs"
-          className={({ isActive, isPending }) =>
-            isPending ? "pending" : isActive ? "text-primary" : ""
-          }
-        >
-          Blogs
-        </NavLink>
-      </li>
-      <li>
-        <NavLink
-          to="/bookmarks"
-          className={({ isActive, isPending }) =>
-            isPending ? "pending" : isActive ? "text-primary" : ""
-          }
-        >
-          Bookmarks
-        </NavLink>
-      </li>
-    </>
-  );
 
   return (
-    <div className="navbar bg-base-100 shadow-lg px-5 fixed z-10 shadow-sky-500">
-      <div className="flex-1">
+    <div className="navbar flex justify-between  
+    bg-base-100 shadow-lg px-5 fixed z-10 shadow-sky-500">
+      <div className="">
         <Link className="btn btn-ghost text-4xl font-bold text-secondary gap-0">
           Byte<span className="text-primary">Blaze</span>{" "}
         </Link>
       </div>
-      <div className="flex-none">
+      <div className="">
         <ul className="menu menu-horizontal px-1 text-xl font-medium gap-3">
-          {links}
+          <li>
+            <NavLink
+              to="/"
+              className={({ isActive, isPending }) =>
+                isPending ? "pending" : isActive ? "text-primary" : ""
+              }
+            >
+              Home
+            </NavLink>
+          </li>
+
+          <li>
+            <NavLink
+              to="/blogs"
+              className={({ isActive, isPending }) =>
+                isPending ? "pending" : isActive ? "text-primary" : ""
+              }
+            >
+              Blogs
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/bookmarks"
+              className={({ isActive, isPending }) =>
+                isPending ? "pending" : isActive ? "text-primary" : ""
+              }
+            >
+              Bookmarks
+            </NavLink>
+          </li>
         </ul>
 
         {/* theme controller */}
@@ -69,7 +65,7 @@ const Navbar = () => {
           <input
             onChange={handleToggle}
             type="checkbox"
-            className="toggle theme-controller bg-base-content col-span-2 col-start-1 row-start-1"
+            className="toggle theme-controller bg-base-content col-span-2 col-start-1 row-start-1 "
           />
           <svg
             className="stroke-base-100 fill-base-100 col-start-1 row-start-1"
