@@ -4,6 +4,7 @@ import Footer from "../components/Footer/Footer";
 import SpinnerLoader from "../components/Spinner/SpinnerLoader";
 
 
+
 const MainLayouts = () => {
     const navigation =useNavigation();
     return (
@@ -21,6 +22,7 @@ const MainLayouts = () => {
            <div className="h-10">
            <Footer></Footer>
            </div>
+         
         </div>
     );
 };
