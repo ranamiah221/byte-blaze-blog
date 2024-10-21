@@ -9,10 +9,10 @@ const MainLayouts = () => {
     const navigation =useNavigation();
     return (
         <div className="">
-            <div className="h-20">
+            <div className="md:h-20 ">
             <Navbar></Navbar>
             </div>
-           <div className="min-h-[calc(100vh-123px)] w-full">
+           <div className="md:min-h-[calc(100vh-123px)] w-full">
                   {
                     navigation.state === 'loading' ?<SpinnerLoader></SpinnerLoader>:
                     <Outlet></Outlet>

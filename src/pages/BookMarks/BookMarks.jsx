@@ -20,7 +20,8 @@ const BookMarks = () => {
     return (
         <>{
            bookmarks.length===0 ? <div><NoBookmarkFound></NoBookmarkFound></div>:
-         <div className="px-8 my-10 grid justify-center grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+         <div className="px-8 md:my-10 md:pt-0 pt-32 grid justify-center
+         mb-5 grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {
             bookmarks?.map(blog=><BlogCard key={blog.id} blog={blog} deletable={true} handleDelete={handleDelete}></BlogCard>)
           }

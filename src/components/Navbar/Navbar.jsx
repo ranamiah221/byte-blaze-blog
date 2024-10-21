@@ -19,14 +19,14 @@ const Navbar = () => {
 
   return (
     <div className="navbar flex justify-between  
-    bg-base-100 shadow-lg px-5 fixed z-10 shadow-sky-500">
-      <div className="">
-        <Link to='/' className="btn btn-ghost text-4xl font-bold text-secondary gap-0">
+    bg-base-100 shadow-lg md:px-5 fixed z-10 shadow-sky-500 ">
+      <div className="flex-1">
+        <Link to='/' className="btn btn-ghost md:text-4xl font-bold text-secondary gap-0">
           Byte<span className="text-primary">Blaze</span>{" "}
         </Link>
       </div>
-      <nav className="">
-        <ul className="menu menu-horizontal px-1 text-xl font-medium gap-3">
+      <nav className="flex-1 justify-end">
+        <ul className="md:flex md:items-center px-1 md:text-xl font-medium gap-5 mr-2">
           <li>
             <NavLink
               to="/"

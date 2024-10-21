@@ -3,7 +3,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 const Banner = () => {
   return (
-    <div className="hero -mt-20">
+    <div className="hero md:-mt-20 mt-24">
       <div className="hero-content text-center ">
         <div className="max-w-xl">
           <h1 className="text-5xl font-bold">
