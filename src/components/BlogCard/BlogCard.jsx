@@ -26,7 +26,7 @@ const BlogCard = ({blog}) => {
                 {description.slice(0,100)}...
               </p>
             </div>
-          </Link>
+        </Link>
     );
 };
 

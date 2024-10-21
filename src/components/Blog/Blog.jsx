@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { Link, Outlet, useLoaderData } from "react-router-dom";
+import { FaRegBookmark } from "react-icons/fa";
+import { saveBlogs } from "../../utilities";
 
 const Blog = () => {
     const [tabIndex, setTabIndex]=useState(0)
@@ -8,6 +10,11 @@ const Blog = () => {
  
   const { title, reading_time_minutes, comments_count, readable_publish_date,tags } =
     blog;
+    
+   const handleBookmark=blog=>{
+    saveBlogs(blog)
+   }
+        
   return (
     <div className="max-w-4xl px-6 pt-16 mx-auto space-y-12">
       <article className="space-y-8 dark:bg-gray-100 dark:text-gray-900">
@@ -73,6 +80,11 @@ const Blog = () => {
             </svg>
             <span>Author</span>
           </Link>
+
+          {/* bookmark */}
+          <button onClick={()=>handleBookmark(blog)}>
+          <FaRegBookmark className="text-4xl" />
+          </button>
          
         </div>
 
