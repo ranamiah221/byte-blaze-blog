@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import BlogCard from "../../components/BlogCard/BlogCard";
 
 const Blogs = () => {
-    const blogs=useLoaderData();
+  const [isShow, setIsShow]=useState(false)
+  console.log(isShow);
+  const blogs=useLoaderData();
+  console.log(blogs)
     
   return (
     <section className="dark:bg-gray-100 dark:text-gray-800">
@@ -33,17 +36,26 @@ const Blogs = () => {
 
         <div className="grid justify-center grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {
-            blogs.slice(1,19).map(blog=><BlogCard key={blog.id} blog={blog}></BlogCard>)
+            isShow ? 
+            blogs.slice(1,9).map(blog=><BlogCard key={blog.id} blog={blog}></BlogCard>)
+            :
+            blogs.slice(1,4).map(blog=><BlogCard key={blog.id} blog={blog}></BlogCard>)
           }
         </div>
 
         <div className="flex justify-center">
-          <button
-            type="button"
-            className="px-6 py-3 text-sm rounded-md hover:underline dark:bg-gray-50 dark:text-gray-600"
-          >
-            Load more posts...
-          </button>
+        <button 
+              onClick={()=>setIsShow(!isShow)}
+              className="relative inline-block px-4 py-2 font-medium group"
+            >
+              <span className="absolute inset-0 w-full h-full transition duration-200 ease-out transform translate-x-1 translate-y-1 bg-primary group-hover:-translate-x-0 group-hover:-translate-y-0"></span>
+              <span className="absolute inset-0 w-full h-full bg-white border-2 border-secondary group-hover:bg-primary"></span>
+              <span className="relative text-black group-hover:text-white">
+                {
+                  isShow ? 'Show Less': 'Show More'
+                }
+              </span>
+            </button>
         </div>
       </div>
     </section>

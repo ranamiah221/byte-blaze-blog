@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
+import './Navbar.css'
 
 const Navbar = () => {
   const [theme, setTheme] = useState("light");
@@ -20,18 +21,16 @@ const Navbar = () => {
     <div className="navbar flex justify-between  
     bg-base-100 shadow-lg px-5 fixed z-10 shadow-sky-500">
       <div className="">
-        <Link className="btn btn-ghost text-4xl font-bold text-secondary gap-0">
+        <Link to='/' className="btn btn-ghost text-4xl font-bold text-secondary gap-0">
           Byte<span className="text-primary">Blaze</span>{" "}
         </Link>
       </div>
-      <div className="">
+      <nav className="">
         <ul className="menu menu-horizontal px-1 text-xl font-medium gap-3">
           <li>
             <NavLink
               to="/"
-              className={({ isActive, isPending }) =>
-                isPending ? "pending" : isActive ? "text-primary" : ""
-              }
+              
             >
               Home
             </NavLink>
@@ -40,9 +39,7 @@ const Navbar = () => {
           <li>
             <NavLink
               to="/blogs"
-              className={({ isActive, isPending }) =>
-                isPending ? "pending" : isActive ? "text-primary" : ""
-              }
+              
             >
               Blogs
             </NavLink>
@@ -50,9 +47,6 @@ const Navbar = () => {
           <li>
             <NavLink
               to="/bookmarks"
-              className={({ isActive, isPending }) =>
-                isPending ? "pending" : isActive ? "text-primary" : ""
-              }
             >
               Bookmarks
             </NavLink>
@@ -97,7 +91,7 @@ const Navbar = () => {
             <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
           </svg>
         </label>
-      </div>
+      </nav>
     </div>
   );
 };
