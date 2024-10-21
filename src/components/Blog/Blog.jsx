@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, Outlet, useLoaderData } from "react-router-dom";
-import { FaRegBookmark } from "react-icons/fa";
+import { MdBookmarkAdd } from "react-icons/md";
 import { saveBlogs } from "../../utilities";
 
 const Blog = () => {
@@ -83,7 +83,7 @@ const Blog = () => {
 
           {/* bookmark */}
           <button onClick={()=>handleBookmark(blog)}>
-          <FaRegBookmark className="text-4xl" />
+           <MdBookmarkAdd className="text-5xl text-secondary bg-pink-200 p-2 rounded-full" />
           </button>
          
         </div>
