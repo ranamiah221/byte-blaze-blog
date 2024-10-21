@@ -7,12 +7,14 @@ import BookMarks from "../pages/BookMarks/BookMarks";
 import Blog from "../components/Blog/Blog";
 import Content from "../components/Content/Content";
 import Author from "../components/Author/Author";
+import ErrorPage from "../pages/ErrorPage/ErrorPage";
 
 
 const Route = createBrowserRouter([
     {
         path:'/',
         element:<MainLayouts></MainLayouts>,
+        errorElement:<ErrorPage></ErrorPage>,
         children:[
             {
                 path:'/',
